@@ -46,11 +46,10 @@ resource "vault_jwt_auth_backend_role" "example" {
   token_policies    = [vault_policy.tfc.name]
   token_max_ttl     = "3600"
   bound_audiences   = ["https://github.com/${var.github_organization}"]
-  bound_claims_type = "string"
-  bound_claims     = jsonencode({
-    "repo":"${var.github_organization}/${var.github_repository}:pull_request",
-    "repo":"${var.github_organization}/${var.github_repository}:ref:refs/heads/main"
-    })
+  bound_claims_type = "glob"
+  bound_claims     = {
+    "sub": "repo:${var.github_organization}/${var.github_repository}:*"
+    }
   user_claim        = "actor"
   role_type         = "jwt"
 }
