@@ -1,3 +1,3 @@
-output "Vault Address" {
+output "vault-address" {
     value = var.vault_server_url
 }
