@@ -17,7 +17,7 @@ resource "vault_kv_secret_v2" "tfc" {
   name  = "api-token"
   data_json = jsonencode(
     {
-      apiToken = "${tfe_team_token.cicd_user.token}"
+      apiToken = "${tfe_team_token.cicd-user.token}"
     }
   )
 }
