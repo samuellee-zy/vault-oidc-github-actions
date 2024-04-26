@@ -12,10 +12,10 @@ terraform {
   }
 
   cloud {
-    organization = "ned-in-the-cloud"
-
+    organization = "samuellee-dev"
     workspaces {
-      name = "oidc-github-demo"
+      project = "AWS"
+      name = "vault-oidc-github-action"
     }
   }
 }

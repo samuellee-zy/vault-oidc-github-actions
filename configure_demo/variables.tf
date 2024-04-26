@@ -12,3 +12,8 @@ variable "github_repository" {
   type        = string
   description = "(Required) The GitHub repository for the JWT authentication role."
 }
+
+variable "tfc_org_name" {
+  type = string
+  default = "samuellee-dev"
+}
