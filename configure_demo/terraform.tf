@@ -20,3 +20,6 @@ terraform {
   }
 }
 
+provider "github" {}
+
+provider "vault" {}
