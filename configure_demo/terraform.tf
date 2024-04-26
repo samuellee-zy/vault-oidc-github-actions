@@ -2,12 +2,12 @@ terraform {
   required_providers {
     vault = {
       source  = "hashicorp/vault"
-      version = "~>3.0"
+      version = "~>4.0"
     }
 
     github = {
       source  = "integrations/github"
-      version = "~> 4.0"
+      version = "~> 6.0"
     }
   }
 
@@ -22,4 +22,6 @@ terraform {
 
 provider "github" {}
 
-provider "vault" {}
+provider "vault" {
+  address = var.vault_server_url
+}

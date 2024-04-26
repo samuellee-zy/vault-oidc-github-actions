@@ -1,6 +1,4 @@
-provider "vault" {
-  address = var.vault_server_url
-}
+
 
 # Create a KV secrets engine
 resource "vault_mount" "tfc" {
