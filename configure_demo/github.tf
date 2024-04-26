@@ -10,6 +10,7 @@ resource "github_actions_secret" "secrets" {
     "VAULT_SECRET_PATH" = vault_kv_secret_v2.tfc.path
     "VAULT_SECRET_KEY"  = "apiToken"
     "VAULT_ROLE"        = vault_jwt_auth_backend_role.example.role_name
+    "GITHUB_TOKEN"      = var.github_token
   }
   secret_name     = each.key
   plaintext_value = each.value

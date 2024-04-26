@@ -17,3 +17,8 @@ variable "tfc_org_name" {
   type = string
   default = "samuellee-dev"
 }
+
+variable "github_token" {
+  type = string
+  description = "(Required) API Token for Github"
+}
