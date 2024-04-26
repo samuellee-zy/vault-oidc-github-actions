@@ -44,9 +44,9 @@ resource "vault_jwt_auth_backend_role" "example" {
   backend           = vault_jwt_auth_backend.jwt.path
   role_name         = "github-actions-role"
   token_policies    = [vault_policy.tfc.name]
-  token_max_ttl     = "100"
+  token_max_ttl     = "3600"
   bound_audiences   = ["https://github.com/${var.github_organization}"]
-  bound_claims_type = "string"
+  bound_claims_type = "glob"
   bound_subject     = "repo:${var.github_organization}/${var.github_repository}:*"
   user_claim        = "actor"
   role_type         = "jwt"
