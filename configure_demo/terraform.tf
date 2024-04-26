@@ -20,7 +20,9 @@ terraform {
   }
 }
 
-provider "github" {}
+provider "github" {
+  token = var.GITHUB_TOKEN
+}
 
 provider "vault" {
   address = var.vault_server_url
